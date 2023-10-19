@@ -8,6 +8,7 @@ const getCliOptions = () => {
     .option('type', {
       description: 'Either Service, Controller, Model or Route',
       alias: 't',
+      choices: ['controller', 'services', 'routes', 'database']
     })
     .option('name', {
       description: "Name of the type",
