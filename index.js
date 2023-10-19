@@ -5,7 +5,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
-const cli = require("./generator-cmd")
+const generatorCli = require("./generator-cmd")
+const templateCli = require("./template-cmd")
 
 // program
 //   .command('generate <type>')
