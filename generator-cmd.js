@@ -1,6 +1,7 @@
 const fs = require('fs')
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
+const { generator } = require("./generator")
 
 const getCliOptions = () => {
   return yargs(hideBin(process.argv))
@@ -15,5 +16,11 @@ const getCliOptions = () => {
     .demandOption(['type', 'name'], 'See usages, required parameters missing')
     .help().argv
 }
+
+
+generator(getCliOptions()).then(async (generated) => {
+  
+})
+
 
 module.exports = getCliOptions
