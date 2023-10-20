@@ -12,7 +12,10 @@ const TYPES = [
 ]
 
 module.exports.generator = async function generator(args) {
-    const {type, name} = args;
+    if(args){
+        const {type, name} = args;
+    }else throw Error("args not provided")
     const templatePath = path.join(__dirname, 'templates', `${type}.ejs`);
+
     
 }

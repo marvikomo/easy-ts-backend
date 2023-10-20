@@ -4,9 +4,13 @@ const { hideBin } = require('yargs/helpers')
 const { importTemplate } = require("./import-template")
 
 const getCliOptions = () => {
-    yargs(hideBin(process.argv))
-    .command('import', 'Run the import command', () => {
-      console.log('Running the import command...');
+    return yargs(hideBin(process.argv))
+    .command('import', 'Run the import command', (yargs) => {
+      return yargs.option('name', {
+        alias: 'n',
+        type: 'string',
+        description: 'Specify the name'
+      })
     })
     .demandCommand(1, 'You need to specify a command')
     .help()
