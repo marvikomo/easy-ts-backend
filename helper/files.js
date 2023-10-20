@@ -28,12 +28,16 @@ const readDir = (dir) => {
     return fs.readdirSync(dir)
 }
 
-const readFile = (fileName, encoding='utf8') => {
-    return fs.readFileSync(fileName, encoding);
+const readFile = (target, encoding='utf8') => {
+    return fs.readFileSync(target, encoding);
+}
+const writeFile = (target, data) => {
+    fs.writeFileSync(target, data);
 }
 
 module.exports = {
     getAllFiles,
     getFilesInDir,
-    readFile
+    readFile,
+    writeFile
 }

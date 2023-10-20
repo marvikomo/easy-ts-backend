@@ -9,7 +9,12 @@ const getCliOptions = () => {
       return yargs.option('name', {
         alias: 'n',
         type: 'string',
-        description: 'Specify the name'
+        description: 'Specify the name package'
+      })
+      .option('author', {
+        alias:'a',
+        type: 'string',
+        description: 'Specify the name of the author'
       })
     })
     .demandCommand(1, 'You need to specify a command')
