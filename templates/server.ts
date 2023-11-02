@@ -1,1 +1,3 @@
-import "reflect-metadata";
+import { config } from "./config"
+import mongoose, { Schema } from 'mongoose';
+
