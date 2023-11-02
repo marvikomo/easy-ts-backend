@@ -10,10 +10,10 @@ module.exports.importTemplate = async function importTemplate(args) {
     if(!author) throw new Error("Author not provided")
     const templateDir = path.join(__dirname, 'templates');
     const targetDir = process.cwd()+ "/test" 
-    
     const files = getFilesInDir(targetDir)
-    if(files.includes('.mkfile')) throw new Error("Template already imported or make sure your current directory is empty")
+    //if(files.includes('.mkfile')) throw new Error("Template already imported or make sure your current directory is empty")
     fs.copySync(templateDir, targetDir);
+    console.log(files)
 
     if(files.includes('package.json')){
        const targetFile = `${targetDir}/package.json`;
@@ -21,7 +21,9 @@ module.exports.importTemplate = async function importTemplate(args) {
        packageObj.name = name;
        packageObj.author = author
        const updatedData = JSON.stringify(packageObj, null, 2)
+       console.log("upd", updatedData)
        writeFile(targetFile, updatedData);
+       
     }
     console.log('Template imported successfully!');
 }

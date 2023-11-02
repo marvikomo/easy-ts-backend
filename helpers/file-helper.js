@@ -32,7 +32,9 @@ const readFile = (target, encoding='utf8') => {
     return fs.readFileSync(target, encoding);
 }
 const writeFile = (target, data) => {
-    fs.writeFileSync(target, data);
+    console.log(data)
+   let res = fs.writeFileSync(target, data);
+   console.log(res)
 }
 
 module.exports = {
