@@ -1,6 +1,7 @@
 import path from "path";
 import { createLogger, transports, format } from "winston";
 import "winston-daily-rotate-file";
+import { Environment as E } from "../enum";
 
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -37,7 +38,7 @@ const Logger = createLogger({
   transports: [transport],
 });
 
-if (process.env.NODE_ENV !== C.Environment.PRODUCTION) {
+if (process.env.NODE_ENV !== E.PRODUCTION) {
   Logger.add(
     new transports.Console({
       format: format.combine(format.colorize(), format.simple()),
